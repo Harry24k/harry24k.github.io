@@ -1,12 +1,13 @@
 {% if paginator.total_pages > 1 %}
+
 <div class="pagination">
   <ul class="inline-list">
     {% comment %} Link for previous page {% endcomment %}
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
-        <li><a href="{{ site.url }}" class="btn">Previous</a></li>
+        <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/" class="btn">Previous</a></li>
       {% else %}
-        <li><a href="{{ site.url }}/page{{ paginator.previous_page }}/" class="btn">Previous</a></li>
+        <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/page{{ paginator.previous_page }}/" class="btn">Previous</a></li>
       {% endif %}
     {% endif %}
 
@@ -14,7 +15,7 @@
     {% if paginator.page == 1 %}
       <li><strong class="current-page">1</strong></li>
     {% else %}
-      <li><a href="{{ site.url }}">1</a></li>
+      <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/">1</a></li>
     {% endif %}
 
     {% assign page_start = 2 %}
@@ -40,7 +41,7 @@
           {% comment %} Distance must be a positive value {% endcomment %}
           {% assign dist = 0 | minus: dist %}
         {% endif %}
-        <li><a href="{{ site.url }}/page{{ index }}/">{{index}}</a></li>
+        <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/page{{ index }}/">{{index}}</a></li>
       {% endif %}
     {% endfor %}
 
@@ -52,14 +53,14 @@
     {% if paginator.page == paginator.total_pages %}
       <li><strong class="current-page">{{ paginator.page }}</strong></li>
     {% else %}
-      <li><a href="{{ site.url }}/page{{ paginator.total_pages }}/">{{ paginator.total_pages }}</a></li>
+      <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/page{{ paginator.total_pages }}/">{{ paginator.total_pages }}</a></li>
     {% endif %}
 
     {% comment %}
       Link next page
     {% endcomment %}
     {% if paginator.next_page %}
-      <li><a href="{{ site.url }}/page{{ paginator.next_page }}/" class="btn">Next</a></li>
+      <li><a href="{{ site.url }}/{{ page.pagination.baseurl }}/page{{ paginator.next_page }}/" class="btn">Next</a></li>
     {% endif %}
   </ul>
 </div>

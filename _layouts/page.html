@@ -26,11 +26,14 @@
     <header class="header-title">
       <div class="header-title-wrap">
         <h1 class="entry-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <h2><span class="entry-date date published">{{ page.subtitle }}</span></h2>
+        {% endif %}
         {% if site.reading_time %}
-        <p class="entry-reading-time">
+        <!-- <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           {% include read-time.html %}
-        </p><!-- /.entry-reading-time -->
+        </p> --><!-- /.entry-reading-time -->
         {% endif %}
       </div><!-- /.header-title-wrap -->
     </header>

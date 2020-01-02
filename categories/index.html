@@ -1,8 +1,10 @@
 ---
 layout: post-index
-title: Tag Archive
-description: "An archive of posts sorted by tag."
+title: Category Archive
+description: "An archive of posts sorted by Category."
 comments: false
+image:
+  feature: abstract-1.jpg
 ---
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}

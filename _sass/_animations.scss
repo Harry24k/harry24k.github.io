@@ -391,7 +391,7 @@
 
 @-webkit-keyframes SubMenuAnimIn {
   0% {
-    -webkit-transform: translateZ(-300px);
+    -webkit-transform: translateZ(-3000px);
     opacity: 0;
   }
   100% {
@@ -401,7 +401,7 @@
 }
 @-moz-keyframes SubMenuAnimIn {
   0% {
-    -moz-transform: translateZ(-300px);
+    -moz-transform: translateZ(-3000px);
     opacity: 0;
   }
   100% {
@@ -411,7 +411,7 @@
 }
 @keyframes SubMenuAnimIn {
   0% {
-    transform: translateZ(-300px);
+    transform: translateZ(-3000px);
     opacity: 0;
   }
   100% {

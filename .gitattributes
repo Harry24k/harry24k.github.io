@@ -3,3 +3,4 @@ assets/js/plugins/* linguist-vendored
 assets/js/vendor/* linguist-vendored
 assets/js/scripts.min.js linguist-vendored
 _sass/vendor/* linguist-vendored
+
