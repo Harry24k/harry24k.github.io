@@ -30,6 +30,15 @@ body {
 .entry-content {
 	@include font-size(16);
 
+
+	h2 {
+		margin: 50px 0 0 0;
+	}
+
+	h3 {
+		margin: 50px 0 0 0;
+	}
+
 	// Dotted line underlines for links
 	p > a,
 	li > a {
@@ -37,6 +46,8 @@ body {
 
 		&:hover {
 			border-bottom-style: solid;
+			border-bottom-color: rgba(#00f, 0.8);
+			color: rgba(#00f, 0.8);
 		}
 	}
 
@@ -72,11 +83,11 @@ body {
 		color: lighten($base-color,20);
 
 		@media #{$medium} {
-			@include font-rem(48);
+			@include font-rem(36);
 		}
 
 		@media #{$large} {
-			@include font-rem(60);
+			@include font-rem(48);
 		}
 	}
 
