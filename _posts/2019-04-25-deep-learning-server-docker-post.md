@@ -282,7 +282,8 @@ docker에서 처음 run을 하게되면 이미지를 다운 받은 후 컨테이
 * docker diff [container id] : 기존 이미지와 해당 ID의 컨테이너의 차이점 확인하기
 * docker commit [container id] [image name] : 해당 ID의 컨테이너를 뒤의 이름으로 이미지로 저장하기
 * docker rmi [image name] : 해당 이름을 가진 이미지 삭제하기
-* docker save -o [dir/file] [image name] : 해당 이름을 가진 이미지를 파일로 저장하기
+* docker save -o [dir/file] [image name] : 해당 이름을 가진 이미지를 파일(.tar)로 저장하기
+* docker load -i [dir/file] [image name] : 해당 이름을 가진 이미지를 파일(.tar)을 불러오기
 
 더 많은 옵션은 [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)을 참조 바랍니다.
 
@@ -312,6 +313,10 @@ sudo pkill -SIGHUP dockerd
 
 # Test nvidia-smi with the latest official CUDA image
 docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+
+# Restart Docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
 
 이제 그래픽카드를 사용하는 컨테이너를 활용하고 싶으면 nvidia-docker를 활용하면 됩니다.
@@ -320,6 +325,22 @@ docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
 * (nvidia-docker2) docker run -it --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=1,2 nvidia/cuda nvidia-smi
 * (nvidia-docker) NV_GPU=1,2 nvidia-docker run -it nvidia/cuda nvidia-smi
+
+혹시 nvidia-docker를 이미 설치했지만, 설치하고보니 그래픽 드라이버가 오래되서 cuda를 활용하지 못할 경우 안타깝게도 모두 재설치하는 것이 가장 빠른 길입니다. 아래 혹은 [링크](https://devtalk.nvidia.com/default/topic/1065310/linux/docker-tensorflow-gpu-can-t-find-device-as-well-as-nvidia-smi-quot-no-device-found-quot-/)를 따라해주시면 됩니다.
+
+```ruby
+# Delete all nvidia and cuda packages
+sudo apt-get remove --purge '^nvidia-.*'
+sudo apt-get remove --purge '^cuda.*'
+
+# Reinstall nvidia drivers using the drivers ppa:
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt upgrade
+sudo reboot
+```
+
+그 후 드라이버 설치부터 다시 시작해주시면 됩니다.
 
 ### 4) Deepo 이미지 사용하기
 
@@ -335,6 +356,7 @@ docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 ```ruby
 nvidia-docker run -it \
 -p 8888-8890:8888-8890 \
+--shm-size 2G \
 -h hk \
 --name hk \
 -v /docker/data:/data \
@@ -345,11 +367,14 @@ ufoym/deepo:all-py36-jupyter
 * -it로 interative한 tty 모드의 컨테이너로 만들도록 합니다.   
 * -p로 호스트의 포트(8888-8890)와 컨테이너의 포트(8888-8890)를 연결시킵니다.   
     * Jupyter notebook의 포트가 포함되어 있어야하며, 8888~9000 포트를 추천드립니다. (다른 포트의 경우 이것만으로는 안되는 경우 존재)
+* --shm-size로 docker가 사용할 수 있는 shared memory의 크기를 관리합니다. 너무 작으면 pytorch의 dataloader에서 에러가 나는 등의 문제가 발생합니다
+    * 적당한 크기를 알아보기 위해서는 터미널에 "df -h" 명령어를 확인하여 /dev/shm의 사이즈를 참고하면 됩니다.
 * -h로 호스트의 이름을 hk로 정합니다.   
 * --name으로 컨테이너의 이름도 hk로 정합니다.   
 * -v로 호스트의 /docker/data 폴더를 컨테이너의 /data 폴더로 연결시킵니다.
-    * 이전에 mkdir /docker/data로 폴더를 만들어주어야합니다.
-* ufoym/deepo:all-py36-jupyter의 이미지로 만들도록 선언합니다.
+    * 이 경우 이전에 mkdir /docker/data로 폴더를 만들어주어야합니다.
+    * 또한 이렇게 연결한 후 나중에 docker image로 save를 할 경우, 연결된 폴더는 따로 저장되지 않습니다. 따라서, save된 tar 파일에는 해당 환경만 저장되어있으므로 연결된 폴더는 따로 백업해야합니다.
+* ufoym/deepo:all-py36-jupyter의 이미지를 바탕으로 만들도록 선언합니다.
 
 이제 그럼 hk 이름의 컨테이너가 만들어지고, 이 안에는 왠만환 딥러닝 프레임워크 및 Jupyter가 설치되어있습니다!
 
