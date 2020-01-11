@@ -1,11 +1,4 @@
 
-
-```ruby
-{% raw %}
-asdf
-{% endraw %}
-```
-
 ---
 layout: post
 title: 딥러닝을 위한 AWS 세팅하기
