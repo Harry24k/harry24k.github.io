@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Version의 규칙
