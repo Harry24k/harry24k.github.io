@@ -18,11 +18,11 @@ image:
 
 eval은 문자열로 구성된 **식**을 실행하는 함수입니다.
 
-`In[]:`
+`In[1]:`
 ```python
 {% raw %}1+3{% endraw %}
 ```
-`Out[0]:`
+`Out[1]:`
 
 
 
@@ -31,11 +31,11 @@ eval은 문자열로 구성된 **식**을 실행하는 함수입니다.
 
 
 
-`In[]:`
+`In[2]:`
 ```python
 {% raw %}eval('1+3'){% endraw %}
 ```
-`Out[0]:`
+`Out[2]:`
 
 
 
@@ -44,7 +44,7 @@ eval은 문자열로 구성된 **식**을 실행하는 함수입니다.
 
 
 
-`In[]:`
+`In[3]:`
 ```python
 {% raw %}a = 3
 a = eval('a + 3'){% endraw %}
@@ -52,7 +52,7 @@ a = eval('a + 3'){% endraw %}
 
 이를 활용하면, 변수의 이름을 통해 값에 접근할 수 있습니다.
 
-`In[]:`
+`In[4]:`
 ```python
 {% raw %}a = 1
 b = 2
@@ -61,7 +61,7 @@ c = 3
 for var in ['a', 'b', 'c'] :
     print(eval(var)){% endraw %}
 ```
-`Out[0]:`
+`Out[4]:`
 
     1
     2
@@ -70,11 +70,11 @@ for var in ['a', 'b', 'c'] :
 
 한편, eval은 문자열로 구성된 **식**이 아닌 **문**은 처리할 수 없습니다.
 
-`In[]:`
+`In[5]:`
 ```python
 {% raw %}eval('a=3'){% endraw %}
 ```
-`Out[0]:`
+`Out[5]:`
 
 
     Traceback (most recent call last):
@@ -99,7 +99,7 @@ for var in ['a', 'b', 'c'] :
 
 따라서, **문**을 처리할 때는 exec 함수를 사용하게 됩니다.
 
-`In[]:`
+`In[6]:`
 ```python
 {% raw %}exec('a=10')
 print("a:", a)
@@ -107,7 +107,7 @@ print("a:", a)
 exec('b=20')
 print("b:", b){% endraw %}
 ```
-`Out[0]:`
+`Out[6]:`
 
     a: 10
     b: 20
@@ -115,7 +115,7 @@ print("b:", b){% endraw %}
 
 물론 eval과 마찬가지로 string 인자를 전달할 수도 있습니다.
 
-`In[]:`
+`In[7]:`
 ```python
 {% raw %}a = 1
 b = 2
@@ -127,14 +127,14 @@ for var in ['a', 'b', 'c'] :
 
 print("a:", a, "b:", b, "c:", c){% endraw %}
 ```
-`Out[0]:`
+`Out[7]:`
 
     a: 2 b: 3 c: 4
     
 
 반면, exec 함수는 **문**을 처리하기 때문에 **식**은 아무런 의미를 가지지 못합니다.
 
-`In[]:`
+`In[8]:`
 ```python
 {% raw %}exec('a+1'){% endraw %}
 ```
@@ -143,7 +143,7 @@ print("a:", a, "b:", b, "c:", c){% endraw %}
 
 위의 함수들을 활용하면, PyTorch에서의 모델을 구성할때도 변하게 할 수 있습니다.
 
-`In[]:`
+`In[9]:`
 ```python
 {% raw %}import torch
 import torch.nn as nn
@@ -179,12 +179,12 @@ class CNN(nn.Module):
 model = CNN(){% endraw %}
 ```
 
-`In[]:`
+`In[10]:`
 ```python
 {% raw %}# exec을 활용하였음에도 불구하고 잘 구현된 것을 확인할 수 있습니다.
 model{% endraw %}
 ```
-`Out[0]:`
+`Out[10]:`
 
 
 
@@ -219,12 +219,12 @@ model{% endraw %}
 
 
 
-`In[]:`
+`In[11]:`
 ```python
 {% raw %}# 마찬가지로 결과가 제대로 나오는 것을 확인할 수 있습니다!
 model(torch.randn(128, 100)).shape{% endraw %}
 ```
-`Out[0]:`
+`Out[11]:`
 
 
 
