@@ -219,9 +219,9 @@ All this is done for any sub-level being entered.
 
 /* Animation classes for moving out and in */
 .dl-menu.dl-animate-out {
-	-webkit-animation: MenuAnimOut 0s ease;
-	-moz-animation: MenuAnimOut 0s ease;
-	animation: MenuAnimOut 0s ease;
+	-webkit-animation: MenuAnimOut 0.01s ease;
+	-moz-animation: MenuAnimOut 0.01s ease;
+	animation: MenuAnimOut 0.01s ease;
 }
 
 .dl-menu.dl-animate-in {
