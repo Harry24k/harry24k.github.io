@@ -17,7 +17,7 @@ Integrated PhD program in Seoul National Univ'
 
 **Pytorch-Advanced** : [https://github.com/HarryK24/Pytorch-Advanced](https://github.com/HarryK24/Pytorch-Advanced)
 
-* **Pytorch Custom Utils** : [https://github.com/HarryK24/pytorch-custom-utils](https://github.com/HarryK24/pytorch-custom-utils)
+**Pytorch Custom Utils** : [https://github.com/HarryK24/pytorch-custom-utils](https://github.com/HarryK24/pytorch-custom-utils)
 
 **Pytorch Projects** :
 
