@@ -13,12 +13,13 @@ Integrated PhD program in Seoul National Univ'
 
 ## Projects.
 
-**Pytorch Basic** : [https://github.com/HarryK24/Pytorch-Basic](https://github.com/HarryK24/Pytorch-Basic)
+**Pytorch-Basic** : [https://github.com/HarryK24/Pytorch-Basic](https://github.com/HarryK24/Pytorch-Basic)
 
-* **Web with Pytorch** : [https://github.com/HarryK24/Pytorch-Web](https://github.com/HarryK24/Pytorch-Web)
+**Pytorch-Advanced** : [https://github.com/HarryK24/Pytorch-Advanced](https://github.com/HarryK24/Pytorch-Advanced)
+
 * **Pytorch Custom Utils** : [https://github.com/HarryK24/pytorch-custom-utils](https://github.com/HarryK24/pytorch-custom-utils)
 
-**All in Pytorch** :
+**Pytorch Projects** :
 
 * **Imputation**
 
@@ -32,5 +33,10 @@ Integrated PhD program in Seoul National Univ'
 	* **Ensemble Adversarial Traning : Attacks and Defences** : [Paper](https://arxiv.org/abs/1705.07204), [Repo](https://github.com/HarryK24/RFGSM-pytorch)
 	* **Towards Evaluating the Robustness of Neural Networks** : [Paper](https://arxiv.org/abs/1608.04644), [Repo](https://github.com/HarryK24/CW-pytorch)
 	* **Towards Deep Learning Models Resistant to Adversarial Attacks** : [Paper](https://arxiv.org/abs/1706.06083), [Repo](https://github.com/HarryK24/PGD-pytorch)
+
 	* **Adversarial Attacks in Pytorch** : [Repo](https://github.com/HarryK24/adversairal-attacks-pytorch)
+	* **Adversarial Defenses in Pytorch** : [Repo](https://github.com/Harry24k/adversarial-defenses-pytorch)
 	
+* **Bayesian Neural Network**
+
+	* **Bayesian Neural Network in Pytorch** : [Repo](https://github.com/Harry24k/bayesian-neural-network-pytorch)
