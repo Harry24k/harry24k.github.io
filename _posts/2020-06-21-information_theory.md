@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Determinant와 Volume
-tags: [Math, Deep Learning]
+title: 정보이론(Information Theory)
+tags: [Information Theory]
 image:
   path: /images/abstract-1.jpg
   feature: abstract-1.jpg
