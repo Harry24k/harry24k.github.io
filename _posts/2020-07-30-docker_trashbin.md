@@ -26,16 +26,14 @@ image:
 아래 명령어는 각 Disk의 사용용량과 남은 용량을 깔끔(-h)하게 확인할 수 있는 명령어입니다.
 
 `In[1]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}df -h{% endraw %}
 ```
 
 아래 명령어는 특정 폴더의 용량을 확인하는 것입니다.
 
 `In[2]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}sudo du -h --max-depth=1 |sort -hr{% endraw %}
 ```
 
@@ -50,8 +48,7 @@ image:
 따라서 아래와 같이 입력하면 됩니다.
 
 `In[3]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}cd /home/user/workpsace/
 sudo rm -rf .Trash-0{% endraw %}
 ```
@@ -59,8 +56,7 @@ sudo rm -rf .Trash-0{% endraw %}
 혹은 아래도 됩니다.
 
 `In[4]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}sudo rm -rf ~/workspace/.Trash-0{% endraw %}
 ```
 
@@ -73,8 +69,7 @@ sudo rm -rf .Trash-0{% endraw %}
 따라서 아래와 같이 입력하면 됩니다.
 
 `In[5]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}sudo rm -rf ~/.local/share/Trash/files/*{% endraw %}
 ```
 
@@ -85,8 +80,7 @@ sudo rm -rf .Trash-0{% endraw %}
 그냥 파일을 옮기듯이 .Trash-0 폴더로 접속 후 옮겨주시면 됩니다.
 
 `In[6]:`
-```python
-{% raw %}[CodeIn]ruby
+```ruby
 {% raw %}cd ~/workspace/.Trash-0/files
 mv train.py ~/workpace/{% endraw %}
 ```
