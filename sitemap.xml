@@ -18,4 +18,3 @@
     {% endif %}
     {% endfor %}
 </urlset>
-© 2020 GitHub, Inc.
