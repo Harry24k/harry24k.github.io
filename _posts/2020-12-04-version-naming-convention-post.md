@@ -54,4 +54,48 @@ image:
 
 ## 4. Version의 중요성
 
+`In[1]:`
+```python
+{% raw %}import os
+
+DIR="C:\\Users\\slcf\\workspace\\GitHub\\harry24k.github.io\\_posts"
+file = "version-naming-convention-post"
+for filename in os.listdir(DIR):
+    if file in filename:
+        print("Deleting file \"{}\"".format(filename))
+        os.remove(DIR+filename){% endraw %}
+```
+`Out[1]:`
+
+    Deleting file "2020-12-04-version-naming-convention-post.md"
+    
+
+
+    ---------------------------------------------------------------------------
+
+    FileNotFoundError                         Traceback (most recent call last)
+
+    <ipython-input-9-07aebb0d4d48> in <module>()
+          6     if file in filename:
+          7         print("Deleting file \"{}\"".format(filename))
+    ----> 8         os.remove(DIR+filename)
+    
+
+    FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: 'C:\\Users\\slcf\\workspace\\GitHub\\harry24k.github.io\\_posts2020-12-04-version-naming-convention-post.md'
+
+
+`In[2]:`
+```python
+{% raw %}if os.path.isfile(filename) and file in filename:{% endraw %}
+```
+`Out[2]:`
+
+
+      File "<ipython-input-3-edbdc678bd18>", line 1
+        if os.path.isfile(filename) and file in filename:
+                                                         ^
+    SyntaxError: unexpected EOF while parsing
+    
+
+
 사용자 입장에서는 사실 Release Version만을 주로 사용하기 때문에 관계없을 수도 있지만, 자신이 개발자이고 추후 독자적인 프로젝트를 실행하게된다면 Version의 표기가 매우 중요하다고 할 수 있습니다. 해당 프로젝트의 진척도는 물론이고, Version을 기준으로 변경 사항을 Mapping하거나 Roleback할 수 있기 때문에 익숙해지시는 것을 추천합니다.
