@@ -173,7 +173,23 @@ nvidia-387 - ...
 
 도커가 무엇인지 더 자세히 알고 싶으신 분들은 [https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)를 참고해주시면 됩니다.
 
+
 ### 1) 도커 설치
+
+** 중요 : 도커를 한 번 설치한 후에는 그래픽 드라이버를 바꾸게 되면 매우 골치 아파집니다.. 따라서 꼭 그래픽 드라이버를 최신으로 유지하고 설치하도록 합시다! **
+
+```ruby
+# Delete all nvidia and cuda packages
+sudo apt-get remove --purge '^nvidia-.*'
+sudo apt-get remove --purge '^cuda.*'
+
+# Reinstall nvidia drivers using the drivers ppa:
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt upgrade
+sudo reboot
+```**
+
 
 도커 설치는 매우 간단합니다. 아래 명령어만 잘 입력해주시면 됩니다.
 
@@ -341,6 +357,20 @@ sudo reboot
 ```
 
 그 후 드라이버 설치부터 다시 시작해주시면 됩니다.
+
+
+#### 참고: 만약 위로 설치가 안된다면?
+
+만약 위의 과정에서 에러가 발생하거나 설치가 잘되지 않는다면 아래 명령어를 실행해봅시다!
+
+```ruby
+sudo apt-get install docker-ce=18.03.1~ce-0~ubuntu
+sudo apt-get install nvidia-docker2=2.0.3+docker18.03.1-1 nvidia-container-runtime=2.0.0+docker18.03.1-1
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+```
+
 
 ### 4) Deepo 이미지 사용하기
 
