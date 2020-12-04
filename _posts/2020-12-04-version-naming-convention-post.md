@@ -58,31 +58,12 @@ image:
 ```python
 {% raw %}import os
 
-DIR="C:\\Users\\slcf\\workspace\\GitHub\\harry24k.github.io\\_posts"
-file = "version-naming-convention-post"
-for filename in os.listdir(DIR):
-    if file in filename:
-        print("Deleting file \"{}\"".format(filename))
-        os.remove(DIR+filename){% endraw %}
+{% endraw %}
 ```
 `Out[1]:`
 
     Deleting file "2020-12-04-version-naming-convention-post.md"
     
-
-
-    ---------------------------------------------------------------------------
-
-    FileNotFoundError                         Traceback (most recent call last)
-
-    <ipython-input-9-07aebb0d4d48> in <module>()
-          6     if file in filename:
-          7         print("Deleting file \"{}\"".format(filename))
-    ----> 8         os.remove(DIR+filename)
-    
-
-    FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: 'C:\\Users\\slcf\\workspace\\GitHub\\harry24k.github.io\\_posts2020-12-04-version-naming-convention-post.md'
-
 
 `In[2]:`
 ```python
