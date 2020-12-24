@@ -53,14 +53,14 @@ modified: 2019-01-01T15:14:43-04:00
 **Torchattacks**
 
 * Provides adversarial attacks to generate adversarial examples. 
-* https://github.com/Harry24k/adversarial-attacks-pytorch
+* [https://github.com/Harry24k/adversarial-attacks-pytorch](https://github.com/Harry24k/adversarial-attacks-pytorch)
 
-**Adversarial Defenses in PyTorch**: [Repo](https://github.com/Harry24k/adversarial-defenses-pytorch)
+**Adversarial Defenses in PyTorch**
 
 * Provides adversarial defenses based on Torchattacks.
-* https://github.com/Harry24k/adversarial-defenses-pytorch
+* [https://github.com/Harry24k/adversarial-defenses-pytorch](https://github.com/Harry24k/adversarial-defenses-pytorch)
 
 **Torchbnn**
 
 * Provides bayesian neural network framework.
-* https://github.com/Harry24k/bayesian-neural-network-pytorch[](https://github.com/Harry24k/bayesian-neural-network-pytorch)
+* [https://github.com/Harry24k/bayesian-neural-network-pytorch](https://github.com/Harry24k/bayesian-neural-network-pytorch)
