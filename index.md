@@ -17,8 +17,6 @@ modified: 2019-01-01T15:14:43-04:00
 
 ## IMPLEMENTATIONS.
 
-****
-
 **Network Architecture**
 
 * Adversarial Attacks on Graph Neural Networks via Meta Learning: [Paper](https://arxiv.org/abs/1902.08412), [Repo](https://github.com/Harry24k/gnn-meta-attack)
