@@ -78,7 +78,7 @@ Plotly와 비슷한 기능들을 제공하지만, 조금 더 상호작용 가능
 
 그래프 여러 개를 3차원으로 Stack하여 보여줄 때에 유용한 패키지입니다.
 
-![Joyplot](./{{site.url}}/images/visualization-post/joyplot.png){:.center-image}
+![Joyplot]({{site.url}}/images/visualization-post/joyplot.png){:.center-image}
 
 `In[5]:`
 ```python
@@ -91,7 +91,7 @@ https://sbebo.github.io/posts/2017/08/01/joypy/
 
 그래프(Graph) 관련 Viusalization이 잘 되어 있는 패키지입니다.
 
-![lightning](./{{site.url}}/images/visualization-post/cora_ml_both_5.png){:.center-image}
+![lightning]({{site.url}}/images/visualization-post/cora_ml_both_5.png){:.center-image}
 
 `In[6]:`
 ```python
@@ -105,7 +105,7 @@ http://lightning-viz.org/
 
 PyTorch 모델을 시각화해주는 깔끔한 패키지입니다.
 
-![hiddenlayer](./{{site.url}}/images/visualization-post/readme_graph.png){:.center-image}
+![hiddenlayer]({{site.url}}/images/visualization-post/readme_graph.png){:.center-image}
 
 `In[7]:`
 ```python
@@ -119,6 +119,6 @@ https://github.com/waleedka/hiddenlayer
 PyTorch 뿐만이 아니라, 다양한 딥러닝 모델들을 시각화해주는 패키지/프로그램
 입니다.
 
-![netron](./{{site.url}}/images/visualization-post/screenshot.png){:.center-image}
+![netron]({{site.url}}/images/visualization-post/screenshot.png){:.center-image}
 
 https://github.com/lutzroeder/netron
