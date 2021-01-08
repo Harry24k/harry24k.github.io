@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Harry Kim
+title: Harry
 description: "Harry's Website"
 image:
   feature: abstract-0.jpg
