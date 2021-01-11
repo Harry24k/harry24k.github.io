@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Harry Kim
-description: "Introduction of Harry Kim's Blog"
+title: Harry
+description: "Harry's Website"
 image:
   feature: abstract-0.jpg
 share: true
